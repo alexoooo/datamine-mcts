@@ -1,0 +1,113 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <!--====================================================================-->
+    <modelVersion>4.0.0</modelVersion>
+
+
+    <!--====================================================================-->
+    <parent>
+        <groupId>ao.common</groupId>
+        <artifactId>ao-parent</artifactId>
+        <version>6</version>
+    </parent>
+
+
+    <!--====================================================================-->
+    <groupId>ao.ai.opt.tree</groupId>
+    <artifactId>ai-opt-tree</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+
+    <!--====================================================================-->
+    <name>Monte Carlo Tree Search</name>
+
+    <inceptionYear>2011</inceptionYear>
+
+
+    <!--====================================================================-->
+    <properties>
+        <scala.version>2.8.1</scala.version>
+        <maven-scala-plugin.version>2.15.2</maven-scala-plugin.version>
+    </properties>
+
+
+    <!--====================================================================-->
+    <repositories>
+        <repository>
+            <id>ao-central</id>
+            <name>ao specific releases</name>
+            <url>http://ao-commons.googlecode.com/svn/repo/lib-releases</url>
+        </repository>
+        <repository>
+            <id>scala-tools.org</id>
+            <name>Scala-Tools Maven2 Repository</name>
+            <url>http://scala-tools.org/repo-releases</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>scala-tools.org</id>
+            <name>Scala-Tools Maven2 Repository</name>
+            <url>http://scala-tools.org/repo-releases</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+
+    <!--====================================================================-->
+    <dependencies>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>${scala.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.7</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+
+    <!--====================================================================-->
+    <build>
+        <sourceDirectory>src/main/scala</sourceDirectory>
+        <testSourceDirectory>src/test/scala</testSourceDirectory>
+        <plugins>
+            <plugin>
+                <groupId>org.scala-tools</groupId>
+                <artifactId>maven-scala-plugin</artifactId>
+                <version>${maven-scala-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <scalaVersion>${scala.version}</scalaVersion>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+    <!--====================================================================-->
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.scala-tools</groupId>
+                <artifactId>maven-scala-plugin</artifactId>
+                <version>${maven-scala-plugin.version}</version>
+                <configuration>
+                    <scalaVersion>${scala.version}</scalaVersion>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
+</project>
